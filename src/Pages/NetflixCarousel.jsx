@@ -10,7 +10,7 @@ export default class NetflixCarousel extends Component {
           {items.map(item => (
             <Slider.Item item={item} key={item.id}/>
           ))}
-          <Slider.Item item={{title: 'View All', href:'http://localhost:3000/research'}}/> 
+          <Slider.Item item={{title: 'View All', href:'https://loriwebsite.web.app/research'}}/> 
         </Slider>
       </div>
     );
