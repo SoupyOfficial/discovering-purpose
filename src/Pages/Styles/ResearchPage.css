@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
     gap: 20px;
-    padding: 20px 0;
+    padding: 20px 5vw;
   }
   
   /* Media queries for responsiveness */
@@ -11,3 +11,7 @@
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
   }
+
+#research {
+  min-height: 56.3vh;
+}

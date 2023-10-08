@@ -18,11 +18,7 @@ const ResearchPage = () => {
 
   return (
     <section id="research" className="research-section">
-        <header className="header-content" 
-        style={{
-            // backgroundColor: `${backgroundColor}`,
-            // opacity: scrollY > 10 ? 1 : 0.5,
-            }}>
+        <header className="header-content">
         <div className="logo">
             <img src="https://placehold.co/40x20" alt="Logo" />
         </div>
