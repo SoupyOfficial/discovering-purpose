@@ -15,6 +15,7 @@ import Services from './Pages/Services';
 import Contact from './Pages/Contact';
 import NoPage from './Pages/404';
 import Research from './Pages/Research';
+import ResearchPage from './Pages/ResearchPage';
 import Insurance from './Pages/Insurance';
 
 import Admin from './Pages/Admin';
@@ -39,7 +40,12 @@ export default function App() {
               </div>
                 } />
             <Route path="/admin" element={<Admin/>} />
-
+            <Route path='/research' element={
+              <>
+              <ResearchPage/>
+              <Footer />
+              </>
+            }/>
             <Route path="*" element={<NoPage/>} />
         </Routes>
       </main>

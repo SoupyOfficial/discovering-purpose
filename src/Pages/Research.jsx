@@ -4,7 +4,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './Styles/Research.css';
 import Service1 from './Components/Services/Service1';
 import NetflixCarousel from './NetflixCarousel'
-import { loadResearch } from "../Firebase";
+import { loadRecentResearch } from "../Firebase";
 
 
 const Research = () => {
@@ -12,7 +12,7 @@ const Research = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-        await loadResearch(setResearchData);
+        await loadRecentResearch(setResearchData);
         };
         fetchData();
     }, []);
@@ -20,7 +20,7 @@ const Research = () => {
   return (
     <section id="research" className="research-section">
         <h2>Exploratory Research</h2>
-      <NetflixCarousel items={researchData}/>
+        <NetflixCarousel items={researchData} className="carousel" />
     </section>
   );
 };

@@ -38,37 +38,6 @@ const Header = () => {
     return `rgba(${r}, ${g}, ${b}, 1)`;
   };
 
-  // useEffect(() => {
-  //   // Calculate the initial background color
-  //   calculateBackgroundColor();
-
-  //   // Listen for scroll events and update the background color
-  //   window.addEventListener('scroll', calculateBackgroundColor);
-
-  //   // Remove the event listener when the component unmounts
-  //   return () => {
-  //     window.removeEventListener('scroll', calculateBackgroundColor);
-  //   };
-  // }, []);
-
-
-// Attempt 2
-  
-  const [scrollY, setScrollY] = useState(0);
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     setScrollY(window.scrollY);
-  //     console.log(scrollY)
-  //   };
-
-  //   window.addEventListener('scroll', handleScroll);
-
-  //   // return () => {
-  //   //   window.removeEventListener('scroll', handleScroll);
-  //   // };
-  // }, []);
-  
   return (
     <header className="header-content" 
       style={{

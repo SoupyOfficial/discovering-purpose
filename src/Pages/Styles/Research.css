@@ -10,32 +10,7 @@
   text-align: center;
   padding-bottom: 20px;
 }
-.research-carousel {
-  width: 90%;
-  margin: auto;
-}
 
-.carousel-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 300px;
-  padding:0 20px;
-  width: 90% !important;
-  background-color: #f5f5f5; /* Add a background color to the carousel items */
-}
-
-.carousel .slider-wrapper {
-  height: auto !important;
-}
-
-.carousel.carousel-slider .control-arrow {
-  width: 10vw !important; /* Adjust the width as needed */
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  width: 100%; /* Make the icon fill the arrow container */
-  height: 100%; /* Make the icon fill the arrow container */
-  background-size: 50% auto; /* Adjust the background size as needed */
+#carousel {
+  left: 120px;
 }

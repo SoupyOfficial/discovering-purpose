@@ -8,7 +8,7 @@ const Research = ({ data }) => {
       <section id="service">
           <div key={data.id ? data.id : "null"}>
             <h2>
-              <a href={data.href}>{data.title ? data.title : "null"}</a>
+              <a target='_blank' rel='noopener noreferrer' href={data.href.startsWith('http') ? data.href : `http://${data.href}`}>{data.title ? data.title : "null"}</a>
             </h2>
             <p>{data.content ? data.content: "null"}</p>
           </div>

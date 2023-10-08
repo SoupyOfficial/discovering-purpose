@@ -9,6 +9,7 @@ import {
     serverTimestamp,
     onSnapshot,
     query,
+    limit,
     orderBy,
 } from 'firebase/firestore';
 
@@ -73,4 +74,21 @@ async function loadResearch(callback) {
     );
 }
 
-export { loginWithGoogle, submitResearch, loadResearch, auth }
+async function loadRecentResearch(callback) {
+    return onSnapshot(
+      query(
+        collection(db, 'research'),
+        orderBy('timestamp', 'desc'),
+        limit(9)
+      ),
+      (querySnapshot) => {
+        const researchData = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        callback(researchData);
+      }
+    );
+  }
+
+export { loginWithGoogle, submitResearch, loadResearch, loadRecentResearch, auth }
