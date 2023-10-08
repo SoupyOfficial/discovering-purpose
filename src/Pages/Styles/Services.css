@@ -1,0 +1,26 @@
+.services-section {
+  padding-top: 50px;
+  background-color: #f7f7f7;
+}
+
+.services-text {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.services-text p {
+  padding: 20px 30px;
+}
+
+.services-grid {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  max-width: 1200px;
+  min-height: 10vh;
+  margin: 0 auto;
+  text-align: center;
+}

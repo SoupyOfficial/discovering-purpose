@@ -1,0 +1,76 @@
+.footer {
+  display: flex; /* Display children in a row */
+  justify-content: space-between; /* Distribute content evenly along the row */
+  background-color: #333;
+  color: white;
+  padding: 0px 20px; /* Add some padding on the sides */
+  padding-top: 40px;
+}
+
+.logo {
+  border-radius: 5%;
+}
+
+.footer p {
+  text-align: center; /* Center the text */
+  margin-top: 20px; /* Add space above the notice */
+  font-size: 14px; /* Adjust font size */
+  color: #888; /* Adjust text color */
+}
+
+.author {
+  width: 100%;
+  background-color: #333;
+  text-align: center; /* Center the text */
+  font-size: 14px; /* Adjust font size */
+  color: #888; /* Adjust text color */
+  padding: 20px 0;
+}
+
+.affiliations {
+  flex: 1; /* Occupy available space */
+  margin-right: 20px; /* Add some space between affiliations and contact info */
+}
+
+.contact-info {
+  flex: 1; /* Occupy available space */
+}
+
+.affiliations h3,
+.contact-info h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.affiliations ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.affiliations li {
+  max-width: 100px;
+}
+
+.affiliations img {
+  max-width: 100%;
+}
+
+.contact-info p {
+  margin: 5px;
+  padding: 0 20px;
+  
+}
+
+/* Add media query for responsiveness */
+@media (max-width: 768px) {
+  .affiliations ul {
+    justify-content: center;
+  }
+
+  .affiliations li {
+    max-width: 80px;
+  }
+}

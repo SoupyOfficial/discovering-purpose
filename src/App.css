@@ -1,38 +1,250 @@
-.App {
-  text-align: center;
+:root {
+  --background: #fff;
+  --color: #000;
+  --font: Effra ,sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  overflow: hidden;
+  height: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  height: 100vh;
+  width: 100%;
+  overflow: auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+main {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(1, 166, 192, 0.63) 0%, rgba(255, 255, 255, 0.63) 100%), #FFF;
+}
+
+.app {
+  position: relative; /* Set relative positioning for the container */
+  overflow: hidden; /* Hide content that overflows */
+}
+
+.header {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1; 
+}
+
+.content {
+  overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0; 
+  scroll-behavior: smooth;
+  justify-content: center;
+}
+
+.carousel-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.carousel-wrapper {
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+
+.carousel-content-wrapper {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-content {
+  display: flex;
+  transition: all 250ms linear;
+  -ms-overflow-style: none;  /* hide scrollbar in IE and Edge */
+  scrollbar-width: none;  /* hide scrollbar in Firefox */
+}
+
+/* hide scrollbar in webkit browser */
+.carousel-content::-webkit-scrollbar, .carousel-content::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-content > * {
+  width: 100%;
+  flex-shrink: 0;
+  flex-grow: 1;
+}
+
+.carousel-content.show-2 > * {
+  width: 50%;
+}
+
+.carousel-content.show-3 > * {
+  width: calc(100% / 3);
+}
+
+.carousel-content.show-4 > * {
+  width: calc(100% / 4);
+}
+
+.carousel-content.show-5 > * {
+  width: calc(100% / 5);
+}
+
+.carousel-content.show-6 > * {
+  width: calc(100% / 6);
+}
+
+.carousel-content.show-7 > * {
+  width: calc(100% / 7);
+}
+
+.carousel-content.show-8 > * {
+  width: calc(100% / 8);
+}
+
+.carousel-content.show-9 > * {
+  width: calc(100% / 9);
+}
+
+.carousel-content.show-10 > * {
+  width: calc(100% / 10);
+}
+
+
+.left-arrow, .right-arrow {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+  background-color: white;
+  border: 1px solid #ddd;
+}
+
+.left-arrow {
+  left: 24px;
+}
+
+.right-arrow {
+  right: 24px;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .left-arrow, .right-arrow {
+      display: none;
+  }
+}
+
+.picture-container{
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.picture{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid #18c6e8;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+
+.picture-src{
+  width: 100%;
+}
+
+.gutters-sm{
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-bottom: 100px;
+}
+
+#card1{
+  background-color:#484848;
+  border: 2px solid #18c6e8;
+  border-radius: 1%;
+}
+
+#card2{
+  background-color:#484848;
+  border: 2px solid #18c6e8;
+  border-radius: 1%;
+}
+
+.text-underline-hover{
+  text-decoration: none;
   color: white;
+  font-size: large;
 }
 
-.App-link {
-  color: #61dafb;
+.text-underline-hover:hover{
+  text-decoration: underline;
+  color: #18c6e8;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.row {
+  color: #fff;
+  margin-left: 20px;
+}
+.row_posters {
+  display: flex;
+  overflow-y: hidden;
+
+  padding: 40px;
+}
+
+.row_posters::-webkit-scrollbar {
+  display: none;
+}
+
+.row_poster {
+  object-fit: contain;
+  width: 100%;
+  max-height: 100px;
+  height: auto;
+  margin-right: 10px;
+  transition: transform 450ms;
+}
+
+.row_poster:hover {
+  transform: scale(1.08);
+}
+
+.row_posterLarge {
+  max-height: 250px;
+}
+
+.row_posterLarge:hover {
+  transform: scale(1.08);
+}
+
+#cardTitle { 
+  display: flex;
+  max-width: auto;
+  white-space: pre-line;
+  align-items: center;
+  word-break: break-all;
+  justify-content: center;
+  margin-bottom: 5px;
+  font-family: 'Open Sans', sans-serif, monospace;
+  font-size: 1.15rem;
+  font-weight: bold;
+}
+
+#searchText {
+  text-align: center;
+  margin: 10px;
 }

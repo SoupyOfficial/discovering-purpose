@@ -1,25 +1,48 @@
-import logo from './logo.svg';
+import React from 'react';
+import {
+  Routes,
+  Route,
+  BrowserRouter as Router
+} from 'react-router-dom';
 import './App.css';
 
-function App() {
+import Header from './Pages/Components/Header';
+import Footer from './Pages/Components/Footer';
+import Card from './Pages/Components/Card';
+import Home from './Pages/Home';
+import About from './Pages/About';
+import Services from './Pages/Services';
+import Contact from './Pages/Contact';
+import NoPage from './Pages/404';
+import Research from './Pages/Research';
+import Insurance from './Pages/Insurance';
+
+import Admin from './Pages/Admin';
+
+export default function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <main className="app">
+        <Routes>
+          {/* <Route path="/"> */}
+            <Route exact path="/" element={
+              <div>
+                <Header className="header" />
+                <Home />
+                <Card><About /></Card>
+                <Card><Services /></Card>
+                <Card><Contact /></Card>
+                <Card><Research /></Card>
+                <Card><Insurance /></Card>
+                <Footer />
+              </div>
+                } />
+            <Route path="/admin" element={<Admin/>} />
+
+            <Route path="*" element={<NoPage/>} />
+        </Routes>
+      </main>
+    </Router>
   );
 }
-
-export default App;
